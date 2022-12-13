@@ -1,0 +1,35 @@
+{
+  "name": "@rantalainen/magento-api-client",
+  "version": "0.0.1",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsc --watch",
+    "test": "nodemon test.js",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rantalainen/magento-api-client.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "bugs": {
+    "url": "https://github.com/rantalainen/magento-api-client/issues"
+  },
+  "homepage": "https://github.com/rantalainen/magento-api-client#readme",
+  "dependencies": {
+    "got": "^11.8.3",
+    "qs": "^6.11.0"
+  },
+  "devDependencies": {
+    "@types/qs": "^6.9.7",
+    "typescript": "^4.4.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
