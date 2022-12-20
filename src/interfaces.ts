@@ -64,6 +64,12 @@ export interface ISearchCriteria {
   current_page?: number;
 }
 
+export interface ISearchResponse {
+  items: any[];
+  search_criteria: ISearchCriteria;
+  total_count: number;
+}
+
 export interface ICustomAttribute {
   attribute_code: string;
   value: string;

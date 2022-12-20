@@ -1,4 +1,4 @@
-import { ICustomAttribute, ISearchCriteria } from '../interfaces';
+import { ICustomAttribute, ISearchResponse } from '../interfaces';
 
 export interface IFileContent {
   file_data: string;
@@ -248,8 +248,6 @@ export interface IProduct {
   custom_attributes?: ICustomAttribute[];
 }
 
-export interface IProductResponseObject {
+export interface IProductSearchResponse extends ISearchResponse {
   items: IProduct[];
-  search_criteria: ISearchCriteria;
-  total_count: number;
 }

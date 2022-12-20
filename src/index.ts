@@ -3,14 +3,18 @@ import qs from 'qs';
 import { IMagentoApiClientOptions } from './interfaces';
 import { CustomerMethods } from './methods/customer.methods';
 import { InvoiceMethods } from './methods/invoice.methods';
+import { OrderMethods } from './methods/order.methods';
 import { ProductMethods } from './methods/product.methods';
+import { StockItemMethods } from './methods/stock-item.methods';
 
 export class MagentoApiClient {
   options: IMagentoApiClientOptions;
 
   readonly customers: CustomerMethods;
   readonly invoices: InvoiceMethods;
+  readonly orders: OrderMethods;
   readonly products: ProductMethods;
+  readonly stockItems: StockItemMethods;
 
   constructor(options: IMagentoApiClientOptions) {
     // Set default options
@@ -28,7 +32,9 @@ export class MagentoApiClient {
 
     this.customers = new CustomerMethods(this);
     this.invoices = new InvoiceMethods(this);
+    this.orders = new OrderMethods(this);
     this.products = new ProductMethods(this);
+    this.stockItems = new StockItemMethods(this);
   }
 
   async request(method: Method, path: string, queryString?: any, body?: any): Promise<any> {

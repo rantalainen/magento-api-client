@@ -1,4 +1,4 @@
-import { ISearchCriteria } from '../interfaces';
+import { ISearchResponse } from '../interfaces';
 
 export interface IInvoiceItem {
   additional_data?: string;
@@ -107,8 +107,6 @@ export interface IInvoice {
   extension_attributes?: IInvoiceExtensionAttributes;
 }
 
-export interface IInvoiceResponseObject {
+export interface IInvoiceSearchResponse extends ISearchResponse {
   items: IInvoice[];
-  search_criteria: ISearchCriteria;
-  total_count: number;
 }

@@ -1,4 +1,4 @@
-import { ICustomAttribute, ISearchCriteria } from '../interfaces';
+import { ICustomAttribute, ISearchResponse } from '../interfaces';
 
 export interface ICustomerAddressRegion {
   region_code: string;
@@ -72,8 +72,6 @@ export interface ICustomer {
   custom_attributes?: ICustomAttribute[];
 }
 
-export interface ICustomerResponseObject {
+export interface ICustomerSearchResponse extends ISearchResponse {
   items: ICustomer[];
-  search_criteria: ISearchCriteria;
-  total_count: number;
 }

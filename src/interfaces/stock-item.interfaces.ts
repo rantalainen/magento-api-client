@@ -1,0 +1,29 @@
+export interface IStockItem {
+  item_id?: number;
+  product_id?: number;
+  stock_id?: number;
+  qty: number;
+  is_in_stock: boolean;
+  is_qty_decimal: boolean;
+  show_default_notification_message: boolean;
+  use_config_min_qty: boolean;
+  min_qty: number;
+  use_config_min_sale_qty: number;
+  min_sale_qty: number;
+  use_config_max_sale_qty: boolean;
+  max_sale_qty: number;
+  use_config_backorders: boolean;
+  backorders: number;
+  use_config_notify_stock_qty: boolean;
+  notify_stock_qty: number;
+  use_config_qty_increments: boolean;
+  qty_increments: number;
+  use_config_enable_qty_inc: boolean;
+  enable_qty_increments: boolean;
+  use_config_manage_stock: boolean;
+  manage_stock: boolean;
+  low_stock_date: string;
+  is_decimal_divided: boolean;
+  stock_status_changed_auto: number;
+  extension_attributes?: any;
+}
