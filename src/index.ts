@@ -37,7 +37,7 @@ export class MagentoApiClient {
     this.stockItems = new StockItemMethods(this);
   }
 
-  async request(method: Method, path: string, queryString?: any, body?: any): Promise<any> {
+  async request(method: Method, path: string, queryString?: any, json?: any): Promise<any> {
     const gotOptions: OptionsOfJSONResponseBody = {
       method,
       url: `${this.options.url}/rest/${this.options.apiVersion}/${path}`,
@@ -45,7 +45,8 @@ export class MagentoApiClient {
         request: this.options.timeout
       },
       headers: {
-        Authorization: `Bearer ${this.options.accessToken}`
+        Authorization: `Bearer ${this.options.accessToken}`,
+        'Content-Type': 'application/json'
       },
       throwHttpErrors: false,
       responseType: 'json'
@@ -56,9 +57,9 @@ export class MagentoApiClient {
       gotOptions.searchParams = qs.stringify(queryString);
     }
 
-    // If body is defined
-    if (body) {
-      gotOptions.body = body;
+    // If json is defined
+    if (json) {
+      gotOptions.json = json;
     }
 
     // Make request

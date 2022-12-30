@@ -17,7 +17,7 @@ export class Methods {
     this._selectedApi = selectedApi;
   }
 
-  async request(method: Method, path: string, queryString?: any, body?: any) {
-    return await this._magento.request(method, `${this._selectedApi}${path !== '' ? `/${path}` : ''}`, queryString, body);
+  async request(method: Method, path: string, queryString?: any, json?: any) {
+    return await this._magento.request(method, `${this._selectedApi}${path !== '' ? `/${path}` : ''}`, queryString, json);
   }
 }

@@ -35,6 +35,6 @@ export class ProductMethods extends Methods {
 
   /** Updates stock item. */
   async putStockItem(itemId: string, productSku: string, stockItem: IStockItem): Promise<number> {
-    return await super.request('PUT', `${productSku}/stockItems/${itemId}`, undefined, stockItem);
+    return await super.request('PUT', `${productSku}/stockItems/${itemId}`, undefined, { stockItem: stockItem });
   }
 }
